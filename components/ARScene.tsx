@@ -9,6 +9,7 @@ import {useEffectfulState} from "@react-three/drei/helpers/useEffectfulState";
 
 extend({ BoxGeometry });
 
+
 const Model = ({ url } : {url : string}) =>{
     const { scene } = useGLTF(url);
     return <primitive object={scene} scale={[1, 1, 1]} position={[0, 0, 0]}/>;
@@ -37,10 +38,10 @@ export default function ARScene() {
                    <mesh position={[0, 1, 0]} scale={[0.5, 0.5, 0.5]}>
                        <boxGeometry args={[1, 1, 1]} />
                        <meshBasicMaterial color="yellow" />
-                       <Model url="/ball.glb" scale={[0.5, 0.5, 0.5]} position={[0, 0, 0]} />
+                       <Model url="/ball.glb" />
                    </mesh>
                </ARMarker>
-           </ARCanvas>)
+           </ARCanvas>
        </div>)
     );
 }
